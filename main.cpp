@@ -57,12 +57,10 @@ int main() {
 }
 
 int select_goat(list<Goat> trip) {
-    cout << endl;
-
     display_trip(trip);
 
     int choice;
-    cout << "Select goat by # --> ";
+    cout << endl << "Select goat by # --> ";
     cin >> choice;
     cout << endl;
 
