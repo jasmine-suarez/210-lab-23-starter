@@ -29,22 +29,47 @@ int main() {
     while (fin1 >> colors[i++]);
     fin1.close();
 
-    // TEST
-    main_menu();
+    list<Goat> trip;
+    int choice;
+
+    do {
+        choice = main_menu();
+
+        switch (choice) {
+            case 1: // add
+                add_goat(trip, names, colors);
+                break;
+            case 2: // delete
+                delete_goat(trip);
+                break;
+            case 3: // list
+                display_trip(trip);
+                break;
+            case 4: // quit
+                cout << "Exiting..." << endl;
+                break;
+        }
+        cout << endl;
+
+    } while (choice != 4);
 
     return 0;
 }
 
 int select_goat(list<Goat> trip) {
+    cout << endl;
+
     display_trip(trip);
 
     int choice;
     cout << "Select goat by # --> ";
     cin >> choice;
+    cout << endl;
 
     while (choice < 1 || choice > trip.size()) {
         cout << "Invaid choice. Enter 1-" << trip.size() << "--> ";
         cin >> choice;
+        cout << endl;
     }
 
     return choice;
@@ -90,11 +115,13 @@ int main_menu() {
     cout << "Choice --> ";
 
     cin >> choice;
+    cout << endl;
 
     // validates choice
     while (choice < 1 || choice > 4) {
         cout << "Invaid choice. Enter 1-4 --> ";
         cin >> choice;
+        cout << endl;
     }
 
     return choice;
