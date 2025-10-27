@@ -36,11 +36,26 @@ int main() {
 }
 
 int select_goat(list<Goat> trip) {
+    display_trip(trip);
 
+    int choice;
+    cout << "Select goat by # --> ";
+    cin >> choice;
+
+    while (choice < 1 || choice > trip.size()) {
+        cout << "Invaid choice. Enter 1-" << trip.size() << "--> ";
+        cin >> choice;
+    }
+
+    return choice;
 }
 
 void delete_goat(list<Goat> &trip) {
+    int choice = select_goat(trip);
 
+    auto it = trip.begin();
+    advance(it, choice - 1);
+    trip.erase(it);
 }
 
 void add_goat(list<Goat> &trip, string names[], string colors[]) {
@@ -59,6 +74,8 @@ void display_trip(list<Goat> trip) {
              << g.get_name() << " ("
              << g.get_age() << ", "
              << g.get_color() << ")" << endl;
+
+        index++;
     }
 }
 
