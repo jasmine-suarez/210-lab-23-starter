@@ -29,17 +29,41 @@ int main() {
     while (fin1 >> colors[i++]);
     fin1.close();
 
-
-
+    // TEST
+    main_menu();
 
     return 0;
 }
 
+void delete_goat(list<Goat> &trip) {
+
+}
+
+void add_goat(list<Goat> &trip, string [], string []) {
+
+}
+
+void display_trip(list<Goat> trip) {
+
+}
+
 int main_menu() {
+    int choice;
+
     cout << "*** GOAT MANAGER 3001 ***" << endl;
     cout << "[1] Add a goat" << endl;
     cout << "[2] Delete a goat" << endl;
     cout << "[3] List goats" << endl;
     cout << "[4] Quit" << endl;
     cout << "Choice --> ";
+
+    cin >> choice;
+
+    // validates choice
+    while (choice < 1 || choice > 4) {
+        cout << "Invaid choice. Enter 1-4 --> ";
+        cin >> choice;
+    }
+
+    return choice;
 }
