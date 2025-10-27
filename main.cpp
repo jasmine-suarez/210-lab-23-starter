@@ -35,16 +35,24 @@ int main() {
     return 0;
 }
 
+int select_goat(list<Goat> trip) {
+
+}
+
 void delete_goat(list<Goat> &trip) {
 
 }
 
-void add_goat(list<Goat> &trip, string [], string []) {
+void add_goat(list<Goat> &trip, string names[], string colors[]) {
+    int randName = rand() % SZ_NAMES;
+    int randColor = rand() % SZ_COLORS;
+    int randAge = rand() % (MAX_AGE + 1);
+
 
 }
 
 void display_trip(list<Goat> trip) {
-
+    for ()
 }
 
 int main_menu() {
